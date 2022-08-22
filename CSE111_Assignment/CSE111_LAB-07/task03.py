@@ -21,7 +21,7 @@ class Tennis_Tournament(Tournament):
         super().set_name(name)
         self.nump = nump
     def detail(self):
-        return f"Cricket Tournament Name: {super().get_name()} \nNumber of Players:{self.nump}"
+        return f"Tennis Tournament Name: {super().get_name()} \nNumber of Players:{self.nump}"
 
 ct1 = Cricket_Tournament()
 print(ct1.detail())
