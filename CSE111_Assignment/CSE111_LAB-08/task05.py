@@ -9,14 +9,42 @@ class Exam:
         return "Part 1 - Maths\nPart 2 - English\n"
 
 class ScienceExam(Exam):
-    def __init__(self, marks, time, *part):
+    def __init__(self, marks, time, *subject):
         super().__init__(marks)
         self.time = time
-        self.part = part
-    def __str__(self):
-        return f'Marks: {self.marks} Time: {self.time} minutes Number of Parts: {len(self.part)}'
+        self.sub_det = []
+        self.no = 2
+        for i in subject:
+            self.no += 1
+            self.sub_det.append(i)
+
     def examSyllabus(self):
-        return f'{part}'
+        sublist = super().examSyllabus()
+        for item in self.sub_det:
+            sublist +=", " + item
+        return sublist
+
+    def examParts(self):
+        part = super().examParts()
+        counter = 3
+
+        for item in self.sub_det:
+            part += f"part {str(counter)} - {item}\n"
+            counter += 1
+        return part
+
+    def __str__(self):
+        return f"Marks: {str(self.marks)} Time: {str(self.time)} Number of Parts: {str(self.no)}"
+
+# class ScienceExam(Exam):
+#     def __init__(self, marks, time, *part):
+#         super().__init__(marks)
+#         self.time = time
+#         self.part = part
+#     def __str__(self):
+#         return f'Marks: {self.marks} Time: {self.time} minutes Number of Parts: {len(self.part)}'
+#     def examSyllabus(self):
+#         return f'{part}'
 
 engineering = ScienceExam(100,90,"Physics","HigherMaths")
 print(engineering)

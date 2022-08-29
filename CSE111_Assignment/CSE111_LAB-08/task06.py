@@ -19,8 +19,12 @@ class Sphere(Shape3D):
         super().__init__(name, radius)
         print("Shape name: Sphere, Area Formula: 4 * pi * r* r")
 
+    def calc_surface_area(self):
+        self._area = (4* Shape3D.pi* self._radius* self._radius)
+        return self._area
+
     def __str__(self):
-        return f"Radius: {str(self._radius)}\nHeight: No need\nArea: {super().calc_surface_area()}"
+        return f"Radius: {str(self._radius)}\nHeight: No need\nArea: {str(self._area)}"
 
 
 class Cylinder(Shape3D):
@@ -30,10 +34,10 @@ class Cylinder(Shape3D):
         print("Shape name: Cylinder, Area Formula: 2 * pi *r * (r + h)")
 
     def calc_surface_area(self):
-        return (super().calc_surface_area() * (self._radius + self.height))
-
+        self._area = (super().calc_surface_area() * (self._radius + self.height))
+        return self._area
     def __str__(self):
-        return f"Radius: {str(self._radius)}\nHeight: {self.height}\nArea: {super().calc_surface_area()}"
+        return f"Radius: {str(self._radius)}\nHeight: {self.height}\nArea: {str(self._area)}"
 
 
 sph = Sphere('Sphere', 5)

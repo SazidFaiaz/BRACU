@@ -13,19 +13,29 @@ class PokemonBasic:
         return "Name: " + self.name + ", HP: " + str(self.hit_point) + ", Weakness: " + self.weakness
 
 class PokemonExtra(PokemonBasic):
-    def __init__(self, name ='Default', hp=0, weekness=None, type=None, type2=None, *extra):
-        super(name, hp, weekness, type)
-        self.extra = extra
+    def __init__(self, name="Default", hp=0, weakness=None, type=None, type2=None, *extra_power):
+        super().__init__(name, hp, weakness, type)
         self.type2 = type2
+        self.extra_power = extra_power
+
+        self.power_list = list(self.extra_power)
+        self.item1 = []
+        self.item2 = ""
+        for i in self.extra_power:
+            self.item1 = list(i)
+        self.item2 += ", ".join(self.item1)
 
     def get_type(self):
         if self.type2 == None:
-            return 'Main type: ' + self.type
+            return f"Main type: {self.type}"
         else:
-            return f'Main type: {self.type}, Secondary type: {self.type2}'
+            return f"Main type: {self.type} Secondary type: {self.type2}"
 
     def get_move(self):
-        
+        if len(self.extra_power) == 0:
+            return "Basic move: Quick Attack"
+        else:
+            return f"Basic move: Quick Attack\nOther moves: {str(self.item2)}"
 
 print('\n------------Basic Info:--------------')
 pk = PokemonBasic()
