@@ -17,13 +17,43 @@ class AppleProduct:
     print('This is apple product.')
   def calculatePrice(self):
     print('Total Price:', self.base_price)
+  # def __add__(self, other):
+  #   self.totalprice + other.totalprice
 
 class MacBookPro2020(AppleProduct):
   def __init__(self, name, model, ram, chip, tax):
-    super().__init__(name, model)
+    super().__init__(name, model, 1299)
     self.ram = ram
     self.chip = chip
     self.tax = tax
+    self.totalprice = 0
+  def __str__(self):
+    return (f' Product Details:\nName: {self.name}\nProduct model: {self.model}\nHardware Quality: Excellent Hardwares'
+            f'Guarantee/ Warranty: Apple Care \nRam: {self.ram}\nchip: {self.chip} Company Details:\n{super().companyInfo()}'
+            )
+  def calculatePrice(self):
+    self.totaltax = (self.base_price * self.tax)/100
+    self.totalprice = self.totaltax + self.base_price
+    print(f'Calculating Total Price:\nBase Price: {self.base_price}'
+          f'\nTax: {self.tax}%\nTotal Price: {self.totalprice}')
+
+class iPhone12(AppleProduct):
+  def __init__(self, name, model, ram, chip, tax):
+    super().__init__(name, model, 799)
+    self.ram = ram
+    self.chip = chip
+    self.tax = tax
+    self.totalprice = 0
+  def __str__(self):
+    return (f' Product Details:\nName: {self.name}\nProduct model: {self.model}\nHardware Quality: Excellent Hardwares'
+            f'Guarantee/ Warranty: Apple Care \nRam: {self.ram}\nchip: {self.chip} Company Details:\n{super().companyInfo()}'
+            )
+  def calculatePrice(self):
+    self.totaltax = (self.base_price * self.tax)/100
+    self.totalprice = self.totaltax + self.base_price
+    print(f'Calculating Total Price:\nBase Price: {self.base_price}'
+          f'\nTax: {self.tax}%\nTotal Price: {self.totalprice}')
+
 
 m1 = MacBookPro2020('MacBook', 'MacBookPro2020', 8, 'M1', 10)
 print(m1)
@@ -35,5 +65,5 @@ print(iphone)
 print('====================================')
 iphone.calculatePrice()
 print('###################################')
-print('Total Price of these two products: ',end='')
-print('%.2f Dollars'%(m1 + iphone))
+print('Total Price of these two products: ', end='')
+# print('%.2f Dollars'%(m1 + iphone))
