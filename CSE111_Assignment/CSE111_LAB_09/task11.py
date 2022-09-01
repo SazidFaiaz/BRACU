@@ -6,23 +6,26 @@ class Transport:
         self.baseFare = fare
 
     def __str__(self):
-        s =  “Name: ”+self.name + ", Base fare: " + str(self.baseFare)
+        s =  'Name: '+self.name + ", Base fare: " + str(self.baseFare)
         return s
 
+class Bus(Transport):
+    def __init__(self, name, fair):
+        super().__str__(name, fair)
+    def addPassengerWithBags(self, p1, b1, ):
 
 # Write your codes here.
 # Do not change the following lines of code.
-t1 = Bus(“Volvo”, 950)
+t1 = Bus('Volvo', 950)
 print("=================================")
-t1.addPassengerWithBags(“David”, 6,  “Mike”, 1, “Carol”, 3)
+t1.addPassengerWithBags('David', 6,  'Mike', 1, 'Carol', 3)
 print("=================================")
 print(t1)
 print("=================================")
-t2 = Train(“SilkCity”, 850)
+t2 = Train('SilkCity', 850)
 print("=================================")
-t2.addPassengerWithBags(“Bob”, 2, “Simon”, 4)
+t2.addPassengerWithBags('Bob', 2, 'Simon', 4)
 print("=================================")
 print(t2)
 print("=================================")
-print(“Total
-Passengers in Transport: ”, Transport.total_traveller )
+print('Total Passengers in Transport:' , Transport.total_traveller )
