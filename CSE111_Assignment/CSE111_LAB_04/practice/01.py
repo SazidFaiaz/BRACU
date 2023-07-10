@@ -1,4 +1,4 @@
-from multipledispatch import dispatch
+ from multipledispatch import dispatch
 
 class calculator:
 
