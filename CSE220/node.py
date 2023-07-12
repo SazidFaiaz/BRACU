@@ -33,7 +33,7 @@ def print_linked(head):
 def countnode(head):
     count = 0
     temp = head
-    while temp != None :
+    while temp != None:
         count += 1
         temp = temp.next
     return count
@@ -94,7 +94,7 @@ def indexof(head, value):
         temp = temp.next
     return 'Invalid'
 
-
+#Update value of specific index:
 def set(head, index, elem):
     count = 0
     temp = head
@@ -110,6 +110,15 @@ def set(head, index, elem):
         print("successfull!")
     else:
         print("invalid index!")
+
+
+# Inserting an element into a list:
+
+def inserting(head, elem, index):
+    tatal_nodes = countnode(head)
+    if index == 0:
+        n = Node(elem, head)
+
 
 
 linked_list = linked([1, 2, 3, 4])
