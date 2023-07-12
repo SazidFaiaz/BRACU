@@ -3,6 +3,7 @@ class Node:
         self.element = e
         self.next = n
 
+
 def linked(arr):
 
     head = Node(arr[0], None)
@@ -14,12 +15,20 @@ def linked(arr):
     return head
 
 
+# def iteration(head):
+#     temp = head
+#     while temp:
+#         print(temp.element)
+#         temp = temp.next
+
+
 def print_linked(head):
     temp = head
     while temp != None:
         print(temp.element, end="-->")
         temp = temp.next
     print(None)
+
 
 def countnode(head):
     count = 0
@@ -35,20 +44,76 @@ def NodeAt(head, index):
     temp = head
     while temp:
         if count == index:
-            return head
+            return temp
         count += 1
         temp = temp.next
-    return "Invalid "
+    return "Invalid"
+
+
+def elemAt(head, index):
+    temp = head
+    count = 0
+    obj = None
+    while temp:
+        if count == index:
+            obj = temp.element
+            break
+        temp = temp.next
+        count += 1
+    if obj == None:
+        print("Invalid index")
+    return obj
+
 
 def element(head, value):
-    temp =head
+    temp = head
     while temp:
         if temp.element == value:
             return head
         temp = temp.next
     return "dosen't exist"
 
-linked_list = linked([1,2,3,4])
+
+def contains(head, value):
+    temp = head
+
+    while temp:
+        if temp.element == value:
+            return True
+        temp = temp.next
+    return False
+
+
+def indexof(head, value):
+    count = 0
+    temp = head
+    while temp:
+        if temp.element == value:
+            return count
+        count = count+1
+        temp = temp.next
+    return 'Invalid'
+
+
+def set(head, index, elem):
+    count = 0
+    temp = head
+    isUpdated =  False
+    while temp:
+        if count == index:
+            temp.next = elem
+            isUpdated = True
+            break
+        temp = temp.next
+        count += 1
+    if isUpdated:
+        print("successfull!")
+    else:
+        print("invalid index!")
+
+
+linked_list = linked([1, 2, 3, 4])
 print_linked(linked_list)
 print(countnode(linked_list))
-print(element(linked_list,4))
+print(element(linked_list, 4))
+print(NodeAt(linked_list, 3).element)
