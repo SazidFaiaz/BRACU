@@ -134,8 +134,32 @@ def inserting(head, elem, index):
     return head
 
 
+def remove(head, idx):
+    if idx == 0:
+        head = head.next
+    elif idx >= 1 and idx < countnode(head):
+        new = NodeAt(head, idx - 1)
+        remove_node = new.next
+        new.next = remove_node
+    else:
+        print("invalid")
+    return head
 
 
+def copyList(source):
+    copyhead = None
+    copytail = None
+    temp = source
+    while temp:
+        new = Node(temp.element, None)
+        if copyhead == None:
+            copyhead = new
+            copytail = copyhead
+        else:
+            copytail.next = new
+            copytail = copytail.next
+        temp = temp.next
+    return copyhead
 
 linked_list = linked([1, 2, 3, 4])
 print_linked(linked_list)
