@@ -115,9 +115,25 @@ def set(head, index, elem):
 # Inserting an element into a list:
 
 def inserting(head, elem, index):
-    tatal_nodes = countnode(head)
+    total_nodes = countnode(head)
     if index == 0:
-        n = Node(elem, head)
+        new = Node(elem, head)
+        head = new
+    elif index >= 1 and index < total_nodes:
+        new = Node(elem, head)
+        new1 = NodeAt(head, index-1)
+        new2 = NodeAt(head, index)
+        new.next = new2
+        new1.next = new
+    elif index == total_nodes:
+        new = Node(elem, None)
+        new1 = NodeAt(head, total_nodes-1)
+        new1.next = new
+    else:
+        print("Invalid")
+    return head
+
+
 
 
 
