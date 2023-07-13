@@ -161,6 +161,49 @@ def copyList(source):
         temp = temp.next
     return copyhead
 
+def revers_outplace(head):
+    new_head = Node(head.element, None)
+    temp = head.next
+    while temp:
+        new = Node(temp.element, None)
+        new_head = new
+        temp = temp.next
+    return new_head
+
+def revers_inplace(head):
+    new_head = None
+    temp = head
+    while temp:
+        new = temp.next
+        temp.next = new_head
+        new_head = temp
+        temp = new
+    return new_head
+
+
+def rotate_left(head):
+    new_head = head.next
+    temp = new_head
+    while temp.next != None:
+        temp = temp.next
+    temp.next = head
+    head.next = None
+    head = new_head
+    return head
+
+
+def rotate_right(head):
+    last_node = head.next
+    seclast_node = head
+    while last_node.next != None:
+        last_node = last_node.next
+        seclast_node = seclast_node.next
+    last_node.next = head
+    seclast_node.next = None
+    head = last_node
+    return head
+
+
 linked_list = linked([1, 2, 3, 4])
 print_linked(linked_list)
 print(countnode(linked_list))
