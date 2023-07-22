@@ -59,3 +59,4 @@ class DoublyNode:
         return node_to_remove.elem  # Returning the removed element
 
 
+\
