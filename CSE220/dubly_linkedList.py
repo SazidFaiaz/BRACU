@@ -58,5 +58,3 @@ class DoublyNode:
         node_to_remove.prev = None
         return node_to_remove.elem  # Returning the removed element
 
-
-\
