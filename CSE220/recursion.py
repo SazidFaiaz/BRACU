@@ -104,4 +104,26 @@ def max(arr, left, right):
         maxrighthalf = max(arr, mid+1, right)
         return maximum(maxlefthalf, maxrighthalf)
 
+#Selection sort:
+def selectShort(head):
+    if head == None or head.next == None:
+        return
+    else:
+        minNode = findMinNode(head)
+        swap(head, minNode)
+        selectShort(head.next)
 
+def swap(a,b):
+    temp = a.element
+    a.element = b.element
+    b.element = temp
+
+def findMinNode(head):
+    if head.next == None:
+        return head
+    else:
+        minNode = head
+        minNodereset = findMinNode(head.next)
+        if minNodereset.element < head.element:
+            minNode = minNodereset
+        return minNode
