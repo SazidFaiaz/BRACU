@@ -128,4 +128,29 @@ def findMinNode(head):
             minNode = minNodereset
         return minNode
 
+#Selection sort for array:
+
+def selectSort(arr, left):
+    if left == len(arr)-1:
+        return
+    else:
+        minIdx = findMinidx(arr , left, len(arr)-1)
+        new_swap(arr,left,minIdx)
+        selectSort(arr,left+1)
+def new_swap(arr, a, b):
+    temp = arr[a]
+    arr[a] = arr[b]
+    arr[b] = temp
+
+def findMinidx(arr, left, right):
+    if left == right:
+        return left
+    else:
+        mid = (left+right)//2
+        minidxLeft = findMinidx(arr, left, mid)
+        minidxRight = findMinidx(arr, mid+1, right)
+        minIdx = minidxLeft
+        if arr[minidxRight] < arr[minidxLeft]:
+            minIdx = minidxRight
+        return minIdx
 
