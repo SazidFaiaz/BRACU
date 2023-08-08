@@ -30,9 +30,8 @@ printing(arr,0)
 #part d
 def basepower(base, power):
     if power == 0:
-        return
+        return 1
     else:
-        basepower(base*base, power-1)
-        return base
+        return base*basepower(base, power-1)
 
-print(basepower(3,3))
+print(basepower(3,2))
