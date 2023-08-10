@@ -11,40 +11,45 @@ print(corresponding(5))
 
 # part B
 class Node:
-    def __init__(self, elem, next, prev):
-        self.element = elem
-        self.next = next
-        self.prev = prev
+    def __init__(self, e, n):
+        self.element = e
+        self.next = n
 
-class doubly:
-    def __init__(self, alist):
-        self.head = None
-        self.tail = None
-        Node = None
+def linked(arr):
+    head = Node(arr[0], None)
+    tail = head
+    for i in range(1, len(arr)):
+        new = Node(arr[i], None)
+        tail.next = new
+        tail = tail.next
+    return head
+def print_linked(head):
+    temp = head
+    while temp != None:
+        print(temp.element, end="-->")
+        temp = temp.next
+    print(None)
 
-        if type(alist) == Node:
-            self.head = alist
-
-        elif type(alist) == list:
-            for i in range(len(alist)):
-                new_node = Node(alist[i], None, None)
-
-                if self.head == None:
-                    self.head = new_node
-                    Node = new_node
-
-                else:
-                    Node.next = new_node
-                    new_node.prev = Node
-                    Node = Node.next
-
-        self.tail = Node
-
-def recursiveList(node):
-    if node is None:
+def recursiveList_sum(head):
+    temp = head
+    if temp is None:
         return 0
     else:
-        return node.element + recursiveList(node.next)
+        return temp.element + recursiveList_sum(temp.next)
 
-a = doubly([0,1,2,3,4,5])
+linked_list = linked([10, 20, 30, 40])
+print_linked(linked_list)
+print(recursiveList_sum(linked_list))
+
+#part C
+
+def print_revers(head):
+    if head is None:
+        return
+    print_revers(head.next)
+    print(head.element)
+
+linked_list = linked([10, 20, 30, 40])
+print_revers(linked_list)
+
 
