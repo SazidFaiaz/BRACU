@@ -4,20 +4,16 @@ class Node:
         self.bottom = bottom_node  # for nested item check
         self.val = val  # The integer value.
 
+def is_list(item):
+    return type(item) is list
 
 def flattenList(given_list, output_list):
-    if len(given_list) == 0:
-        return output_list
-
-    item = given_list[0]
-
-    if isinstance(item, list):
-        return flattenList(item + given_list[1:], output_list)
-    else:
-        output_list = flattenList(given_list[1:], output_list)
-        output_list.insert(0, item)
-        return output_list
-
+    for item in given_list:
+        if is_list(item):
+            flattenList(item, output_list)
+        else:
+            output_list.append(item)
+    return output_list
 
 given_list = [1, [2, [3, [4], 5], 6], 7, 8, [9, [[10, 11], 12], 13], 14, [15, [16, [17]]]]
 output_list = flattenList(given_list, [])
