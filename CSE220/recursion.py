@@ -1,9 +1,9 @@
 
-def fact(n):
-    if n == 0 or n == 1:
-        return n  #base function
-    else:
-        return n * fact(n-1)
+# def fact(n):
+#     if n == 0 or n == 1:
+#         return n  #base function
+#     else:
+#         return n * fact(n-1)
 
 #find the sum of numbers of a linked list iteratively
 # def interativesum(head):
@@ -94,7 +94,8 @@ def arrayMax(arr, left):
         maxreset = arrayMax(arr, left+1)
         return maximum(arr[left], maxreset)
 
-#Finding the maximum in an array
+#Finding the maximum in an array:
+
 def max(arr, left, right):
     if left == right:
         return arr[left]
@@ -105,6 +106,7 @@ def max(arr, left, right):
         return maximum(maxlefthalf, maxrighthalf)
 
 #Selection sort:
+
 def selectShort(head):
     if head == None or head.next == None:
         return
