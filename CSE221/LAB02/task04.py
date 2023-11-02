@@ -16,7 +16,7 @@ print(new_arr)
 
 new_arr.sort(key = lambda x:x[1])
 print(new_arr)
-# final_arr.append(new_arr[0])
+
 for m in range(M):
   final_arr.append(new_arr[0])
   new_arr.remove(new_arr[0])

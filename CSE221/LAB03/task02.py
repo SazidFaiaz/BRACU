@@ -6,7 +6,7 @@ print(arr)
 
 def findMax(arr):
     if len(arr) == 1:
-        return arr[0]
+        return (arr[0])
     else:
         mid = len(arr) // 2
         left_max = findMax(arr[:mid])
@@ -16,4 +16,4 @@ def findMax(arr):
 
 max_value = findMax(arr)
 print("Maximum value is:", max_value)
-fileout.write(f'This is output: {max_value}')
+fileout.write(str(max_value))
