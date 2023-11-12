@@ -16,7 +16,8 @@ def printmatrix(matrix):
     for i in range(len(matrix)):
         for j in range(len(matrix[i])):
             print(matrix[i][j], end=' ')
-            fileout.write(f'{matrix[i][j]} \n ')
+            fileout.write(f'{matrix[i][j]}')
+        fileout.write(f'\n')
         print()
 
 printmatrix(matrix)
