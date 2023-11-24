@@ -6,7 +6,7 @@ print(arr)
 
 def findMax(arr):
     if len(arr) == 1:
-        return (arr[0])
+        return (arr[0]) #base case
     else:
         mid = len(arr) // 2
         left_max = findMax(arr[:mid])

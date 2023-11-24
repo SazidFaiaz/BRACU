@@ -1,15 +1,12 @@
 from collections import defaultdict, deque
 
 def BFS(graph, start):
-    # Initialize colors and queue
     colors = defaultdict(int)
     queue = deque()
 
-    # Set the color of the start node to 1 (visited)
     colors[start] = 1
     queue.append(start)
 
-    # List to store the BFS path
     bfs_path = []
 
     while queue:
@@ -37,7 +34,6 @@ for road in roads:
     graph[u].append(v)
     graph[v].append(u)
 
-# Find and print the BFS traversal path
 bfs_path = BFS(graph, 1)
 print(" ".join(map(str, bfs_path)))
 
