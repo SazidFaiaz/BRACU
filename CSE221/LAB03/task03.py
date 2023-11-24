@@ -22,9 +22,9 @@ def merge(a, b):
     while i < len(a) and j < len(b):
         if a[i] <= b[j]:
             merged.append(a[i])
-            i += 1
+            i += 1 # smallest value add i
         else:
-            merged.append(b[j])
+            merged.append(b[j]) # biggest value add j
             j += 1
             count += len(a) - i
 

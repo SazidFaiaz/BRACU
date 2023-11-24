@@ -6,7 +6,7 @@ print(arr)
 
 def merge(a, b):
     merged = []
-    i = j = 0
+    i = j = 0 # etarate two array
 
     while i < len(a) and j < len(b):
         if a[i] < b[j]:
@@ -21,7 +21,7 @@ def merge(a, b):
         merged.append(a[i])
         i += 1
 
-    while j < len(b):
+    while j < len(b): # 2nd rray
         merged.append(b[j])
         j += 1
 
