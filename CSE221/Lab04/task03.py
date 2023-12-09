@@ -11,7 +11,7 @@ def DFS(graph, start):
         dfs_path.append(vertex)
 
         for neighbor in graph[vertex]:
-            if colors[neighbor] == 0:
+            if colors[neighbor] == 0: # for recursive function
                 explore(neighbor)
 
     explore(start)

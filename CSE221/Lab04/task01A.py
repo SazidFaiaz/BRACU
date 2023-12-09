@@ -13,8 +13,8 @@ for i in range (M):
 # print(matrix)
 
 def printmatrix(matrix):
-    for i in range(len(matrix)):
-        for j in range(len(matrix[i])):
+    for i in range(len(matrix)): #parent list
+        for j in range(len(matrix[i])): # nested list
             print(matrix[i][j], end=' ')
             fileout.write(f'{matrix[i][j]}')
         fileout.write(f'\n')
