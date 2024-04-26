@@ -69,6 +69,7 @@ if time == math.inf:
 else:
     f2.write("Time " + str(time) + '\nNode ' + str(node))
 
+# Explanation:
 # Here, for two people - Alice and Bob, we run dijkstra twice
 # from each of their starting node. so, we get two pa
 # arrays with the shortest distances. We compare both

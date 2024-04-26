@@ -34,6 +34,8 @@ for i in range(1, len(inp),1):
     if i<len(inp)-1:
        f2.write("\n")
 f2.close()
+
+# Explanation:
 # We have a getParent function that recursively finds the
 # parent of all nodes. Initially, the parent of each node
 # is themselves: We iterate through every connection and

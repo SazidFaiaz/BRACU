@@ -49,6 +49,8 @@ for i in range(1, len(inp)-1, 1):
 
 costs = djikstra(dic, source)
 f2.write(" ".join(list(map(str, costs))))
+
+# Explanation:
 # In Dijkstra's algorittion, we find the shortest path 
 # from source node to all other nodes in a non-negative
 # graph. Here, there is a priority aquere. We take the 

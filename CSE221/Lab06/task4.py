@@ -49,6 +49,8 @@ for i in range(len(conn)):
 f2.write(str(totalCost))
 f2.close()
 
+
+# Explanation:
 # Here, we have to find the minimum First, the vertices are sorted spanning
 # tree cost. in ascending order of cost. Then, we have to
 # iterate through this lif list of sorted vertices. For the
